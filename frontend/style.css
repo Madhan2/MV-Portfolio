@@ -1,0 +1,217 @@
+/* 1. Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Website-wide styling */
+body {
+  background-color: #080c08;
+  color: #e0e0e0;
+  font-family: "Courier New", monospace;
+  line-height: 1.6;
+}
+
+/* 3. Reusable colors */
+:root {
+  --green: #00ff66;
+  --dark: #0e6c0e;
+  --card: #101810;
+  --text: #e0e0e0;
+}
+
+/* 4. Navigation bar */
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 8%;
+  border-bottom: 1px solid #1b2b1b;
+}
+
+.logo {
+  color: var(--green);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--green);
+}
+
+/* Navigation links */
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px;
+
+    list-style: none;
+}
+
+/* Individual links */
+header nav ul li a {
+    display: inline-block;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 20px;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--green);
+}
+
+
+/* 5. Common section styling */
+section {
+  padding: 90px 12%;
+}
+
+section h2 {
+  color: var(--green);
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+/* 6. Hero section */
+.hero {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.terminal {
+  color: var(--green);
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 7vw, 75px);
+  color: rgb(255, 255, 255);
+  margin-bottom: 15px;
+}
+
+.hero h1 span {
+  color: var(--green);
+}
+
+.hero p {
+  max-width: 650px;
+  color: #a0a0a0;
+  margin-bottom: 25px;
+}
+
+/* 7. Buttons and links */
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border: 1px solid var(--green);
+  color: var(--green);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--green);
+  color: var(--dark);
+}
+
+/* 8. Dynamic content containers */
+#skills-container,
+#projects-container,
+#achievements-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* 9. Cards created by JavaScript */
+.card {
+  background: var(--card);
+  border: 1px solid #1b2b1b;
+  padding: 22px;
+  border-radius: 8px;
+  transition:
+    transform 0.3s,
+    border-color 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--green);
+}
+
+/* 10. Footer */
+footer {
+  text-align: center;
+  padding: 25px;
+  border-top: 1px solid #1b2b1b;
+  color: #777;
+}
+
+/* 11. Mobile responsiveness */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+     header nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+  section {
+    padding: 65px 7%;
+  }
+
+  .hero {
+    min-height: 70vh;
+  }
+}
+
+.skill-category {
+    margin-bottom: 45px;
+}
+
+.skill-category h3 {
+    color: #a0a0a0;
+    font-size: 17px;
+    margin-bottom: 18px;
+    border-left: 3px solid var(--green);
+    padding-left: 12px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.skills-grid .card {
+    text-align: center;
+    color: var(--green);
+    font-size: 14px;
+}
