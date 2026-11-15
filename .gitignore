@@ -17,4 +17,4 @@ pnpm-debug.log*
 Thumbs.db
 
 # Editor settings
-.vscode/
+.vscode/launch.json
