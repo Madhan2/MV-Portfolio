@@ -58,28 +58,27 @@ nav a:hover {
 
 /* Navigation links */
 header nav ul {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px;
 
-    list-style: none;
+  list-style: none;
 }
 
 /* Individual links */
 header nav ul li a {
-    display: inline-block;
-    color: var(--text);
-    text-decoration: none;
-    font-size: 20px;
-    white-space: nowrap;
-    transition: color 0.3s ease;
+  display: inline-block;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 20px;
+  white-space: nowrap;
+  transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: var(--green);
+  color: var(--green);
 }
-
 
 /* 5. Common section styling */
 section {
@@ -177,11 +176,11 @@ footer {
     gap: 15px;
   }
 
-     header nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
+  header nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
 
   section {
     padding: 65px 7%;
@@ -193,25 +192,71 @@ footer {
 }
 
 .skill-category {
-    margin-bottom: 45px;
+  margin-bottom: 45px;
 }
 
 .skill-category h3 {
-    color: #a0a0a0;
-    font-size: 17px;
-    margin-bottom: 18px;
-    border-left: 3px solid var(--green);
-    padding-left: 12px;
+  color: #a0a0a0;
+  font-size: 17px;
+  margin-bottom: 18px;
+  border-left: 3px solid var(--green);
+  padding-left: 12px;
 }
 
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
 }
 
 .skills-grid .card {
-    text-align: center;
-    color: var(--green);
-    font-size: 14px;
+  text-align: center;
+  color: var(--green);
+  font-size: 14px;
+}
+.skill-category {
+  margin-bottom: 40px;
+}
+
+.skill-category h3 {
+  color: var(--green);
+  margin-bottom: 18px;
+  font-size: 18px;
+}
+
+.skills-grid,
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: #111a11;
+  border: 1px solid #263526;
+  border-radius: 10px;
+  padding: 22px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  border-color: var(--green);
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  color: var(--green);
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #b5b5b5;
+  line-height: 1.6;
+}
+
+.card a {
+  display: inline-block;
+  color: var(--green);
+  margin: 12px 12px 0 0;
+  text-decoration: none;
 }

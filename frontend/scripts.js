@@ -48,36 +48,139 @@ function typeEffect() {
 // Start the animation
 typeEffect();
 
+// Backend API address
+const API_URL = "http://localhost:5000/api";
 
-const skillCategories = {
-    languages: {
-        container: "languages-container",
-        skills: ["C", "C++", "Java", "Python"]
-    },
+// Fetch portfolio information
+async function loadPortfolio() {
+  try {
+    const response = await fetch(`${API_URL}/portfolio`);
 
-    tools: {
-        container: "tools-container",
-        skills: ["Git", "GitHub", "Linux", "VS Code"]
-    },
- web: {
-        container: "web-container",
-        skills: ["HTML", "CSS", "JavaScript"]
+    // Check whether the request was successful
+    if (!response.ok) {
+      throw new Error("Failed to fetch portfolio data");
     }
-};
 
-// Generate cards for each category
-Object.values(skillCategories).forEach(category => {
+    // Convert JSON response into JavaScript data
+    const result = await response.json();
 
-    const container = document.getElementById(category.container);
+    // Extract portfolio information
+    const portfolio = result.data;
 
-    category.skills.forEach(skill => {
+    // Display the information
+    displaySkills(portfolio.skills);
+    displayProjects(portfolio.projects);
+    displayAchievements(portfolio.achievements);
+  } catch (error) {
+    console.error("Error loading portfolio:", error);
 
-        const card = document.createElement("div");
+    document.getElementById("skills-container").textContent =
+      "Unable to load skills.";
 
-        card.className = "card";
-        card.textContent = skill;
+    document.getElementById("projects-container").textContent =
+      "Unable to load projects.";
 
-        container.appendChild(card);
+    document.getElementById("achievements-container").textContent =
+      "Unable to load achievements.";
+  }
+}
+
+// Display skills grouped by category
+function displaySkills(skills) {
+  const container = document.getElementById("skills-container");
+  container.replaceChildren();
+
+  const categories = {};
+
+  skills.forEach((skill) => {
+    if (!categories[skill.category]) {
+      categories[skill.category] = [];
+    }
+
+    categories[skill.category].push(skill);
+  });
+
+  Object.keys(categories).forEach((category) => {
+    const categoryDiv = document.createElement("div");
+    categoryDiv.className = "skill-category";
+
+    const heading = document.createElement("h3");
+    heading.textContent = category;
+
+    const grid = document.createElement("div");
+    grid.className = "skills-grid";
+
+    categories[category].forEach((skill) => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.textContent = skill.name;
+
+      grid.appendChild(card);
     });
 
-});
+    categoryDiv.append(heading, grid);
+    container.appendChild(categoryDiv);
+  });
+}
+
+// Display projects
+function displayProjects(projects) {
+  const container = document.getElementById("projects-container");
+  container.replaceChildren();
+
+  projects.forEach((project) => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const heading = document.createElement("h3");
+    heading.textContent = project.name;
+
+    const description = document.createElement("p");
+    description.textContent = project.description;
+
+    const technologies = document.createElement("p");
+    technologies.textContent =
+      "Technologies: " + (project.technologies || []).join(", ");
+
+    card.append(heading, description, technologies);
+
+    // Add GitHub link if available
+    if (project.github) {
+      const link = document.createElement("a");
+      link.textContent = "View GitHub";
+      link.href = project.github;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      card.appendChild(link);
+    }
+
+    // Add demo link if available
+    if (project.demo) {
+      const link = document.createElement("a");
+      link.textContent = "Live Demo";
+      link.href = project.demo;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      card.appendChild(link);
+    }
+
+    container.appendChild(card);
+  });
+}
+
+// Display achievements
+function displayAchievements(achievements) {
+  const container = document.getElementById("achievements-container");
+  container.replaceChildren();
+
+  achievements.forEach((achievement) => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.textContent = achievement;
+
+    container.appendChild(card);
+  });
+}
+
+// Load everything when the page opens
+loadPortfolio();
