@@ -1,243 +1,595 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Admin Dashboard | Madhan</title>
-    <link rel="stylesheet" href="admin.css" />
-  </head>
 
-  <body>
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="sidebar-logo">
-        <span class="terminal-symbol">></span> ADMIN<span class="green"
-          >.EXE</span
-        >
-      </div>
-
-      <p class="sidebar-label">MENU</p>
-
-      <nav class="sidebar-nav">
-        <a href="#overview" class="nav-link active">
-          <span>▣</span> Overview
-        </a>
-
-        <a href="#projects" class="nav-link"> <span>▤</span> Projects </a>
-
-        <a href="#skills" class="nav-link"> <span>⚙</span> Skills </a>
-
-        <a href="#quick-links" class="nav-link"> <span>↗</span> Quick Links </a>
-      </nav>
-
-      <div class="sidebar-bottom">
-        <div class="admin-profile">
-          <div class="profile-avatar">MV</div>
-          <div>
-            <strong>Madhan</strong>
-            <small>Administrator</small>
-          </div>
-        </div>
-
-        <a href="../index.html" class="back-link"> ← View Portfolio </a>
-      </div>
-    </aside>
-
-    <!-- Main Content -->
-    <main class="main-content">
-      <!-- Topbar -->
-      <header class="topbar">
-        <div>
-          <p class="breadcrumb">ADMIN / DASHBOARD</p>
-          <h1>Dashboard<span class="green">.</span></h1>
-        </div>
-
-        <div class="system-status">
-          <span class="status-dot"></span>
-          System Online
-        </div>
-      </header>
-
-      <!-- Overview -->
-      <section id="overview" class="dashboard-section">
-        <div class="welcome-section">
-          <div>
-            <p class="section-tag">// CONTROL CENTER</p>
-            <h2>Welcome back, Madhan.</h2>
-            <p>Manage your portfolio content from here.</p>
-          </div>
-        </div>
-
-        <!-- Statistics -->
-        <div class="stats-grid">
-          <div class="stat-card">
-            <p>Total Projects</p>
-            <h2 id="total-projects">0</h2>
-            <span>Projects in portfolio</span>
-          </div>
-
-          <div class="stat-card">
-            <p>Total Skills</p>
-            <h2 id="total-skills">0</h2>
-            <span>Skills listed</span>
-          </div>
-
-          <div class="stat-card">
-            <p>Achievements</p>
-            <h2 id="total-achievements">0</h2>
-            <span>Achievements listed</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Projects Management -->
-      <section id="projects" class="dashboard-section">
-        <div class="section-heading">
-          <div>
-            <p class="section-tag">// PROJECT MANAGEMENT</p>
-            <h2>Manage Projects</h2>
-          </div>
-        </div>
-
-        <!-- Add Project Form -->
-        <div class="admin-panel">
-          <h3>Add New Project</h3>
-
-          <form id="project-form">
-            <div class="form-group">
-              <label for="project-name">Project Name</label>
-              <input
-                type="text"
-                id="project-name"
-                placeholder="Enter project name"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="project-description">Description</label>
-              <textarea
-                id="project-description"
-                placeholder="Describe your project"
-                required
-              ></textarea>
-            </div>
-
-            <div class="form-group">
-              <label for="project-technologies"> Technologies </label>
-              <input
-                type="text"
-                id="project-technologies"
-                placeholder="React, Node.js, MongoDB"
-              />
-              <small>Separate technologies with commas.</small>
-            </div>
-
-            <div class="form-group">
-              <label for="project-github">GitHub URL</label>
-              <input
-                type="url"
-                id="project-github"
-                placeholder="https://github.com/..."
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="project-demo">Live Demo URL</label>
-              <input type="url" id="project-demo" placeholder="https://..." />
-            </div>
-
-            <button type="submit" class="primary-btn">+ Add Project</button>
-          </form>
-        </div>
-
-        <!-- Existing Projects -->
-        <div class="admin-panel">
-          <h3>Existing Projects</h3>
-
-          <div id="admin-projects-list">
-            <!-- JavaScript will populate projects here -->
-          </div>
-        </div>
-      </section>
-
-      <!-- Skills Management -->
-      <section id="skills" class="dashboard-section">
-        <div class="section-heading">
-          <div>
-            <p class="section-tag">// SKILL MANAGEMENT</p>
-            <h2>Manage Skills</h2>
-          </div>
-        </div>
-
-        <!-- Add Skill Form -->
-        <div class="admin-panel">
-          <h3>Add New Skill</h3>
-
-          <form id="skill-form">
-            <div class="form-group">
-              <label for="skill-name">Skill Name</label>
-              <input
-                type="text"
-                id="skill-name"
-                placeholder="Enter skill name"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="skill-category">Category</label>
-
-              <select id="skill-category" required>
-                <option value="">Select Category</option>
-                <option value="Programming Languages">
-                  Programming Languages
-                </option>
-                <option value="Tools & Platforms">Tools & Platforms</option>
-                <option value="Cybersecurity">Cybersecurity</option>
-                <option value="Web Technologies">Web Technologies</option>
-              </select>
-            </div>
-
-            <button type="submit" class="primary-btn">+ Add Skill</button>
-          </form>
-        </div>
-
-        <!-- Existing Skills -->
-        <div class="admin-panel">
-          <h3>Existing Skills</h3>
-
-          <div id="admin-skills-list">
-            <!-- JavaScript will populate skills here -->
-          </div>
-        </div>
-      </section>
-
-      <!-- Quick Links -->
-      <section id="quick-links" class="dashboard-section">
-        <div class="section-heading">
-          <div>
-            <p class="section-tag">// NAVIGATION</p>
-            <h2>Quick Links</h2>
-          </div>
-        </div>
-
-        <div class="quick-links-grid">
-          <a href="../index.html" target="_blank"> View Public Portfolio ↗ </a>
-
-          <a href="http://localhost:5000/api/portfolio" target="_blank">
-            View Portfolio API ↗
-          </a>
-        </div>
-      </section>
-
-      <!-- Footer -->
-      <footer class="admin-footer">
-        <p>Built by Madhan Vigneswaran | Portfolio Admin Panel</p>
-        <p>System Status: <span class="green">Operational</span></p>
-      </footer>
-    </main>
-
+    <link rel="stylesheet" href="admin.css">
     <script src="admin.js" defer></script>
-  </body>
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-brand">
+                <a href="admin.html" class="brand-logo">
+                    MV<span>.</span>
+                </a>
+                <p>ADMIN CONSOLE</p>
+            </div>
+
+            <div class="sidebar-label">WORKSPACE</div>
+
+            <nav class="sidebar-nav">
+
+                <button class="nav-item active" data-view="overview">
+                    <span>▦</span> Overview
+                </button>
+
+                <button class="nav-item" data-view="projects">
+                    <span>◈</span> Projects
+                </button>
+
+                <button class="nav-item" data-view="skills">
+                    <span>◇</span> Skills
+                </button>
+
+                <button class="nav-item" data-view="achievements">
+                    <span>✦</span> Achievements
+                </button>
+
+            </nav>
+
+            <div class="sidebar-label">SYSTEM</div>
+
+            <nav class="sidebar-nav">
+
+                <button class="nav-item" data-view="settings">
+                    <span>⚙</span> Settings
+                </button>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <div class="admin-profile">
+                    <div class="profile-avatar">MV</div>
+
+                    <div>
+                        <h4>Madhan</h4>
+                        <p>Portfolio Admin</p>
+                    </div>
+                </div>
+
+                <a href="../index.html" target="_blank"
+                   rel="noopener noreferrer" class="view-portfolio">
+                    ↗ View Portfolio
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div class="topbar-left">
+
+                    <button id="menu-toggle" class="menu-toggle"
+                            type="button" aria-label="Toggle navigation">
+                        ☰
+                    </button>
+
+                    <div>
+                        <p class="breadcrumb">Workspace / <span id="breadcrumb-current">Overview</span></p>
+                        <h2 id="page-title">Overview</h2>
+                    </div>
+
+                </div>
+
+                <div class="topbar-right">
+                    <div class="system-status">
+                        <span class="status-dot"></span>
+                        <span id="api-status">Checking API...</span>
+                    </div>
+
+                    <div class="topbar-avatar">MV</div>
+                </div>
+
+            </header>
+
+
+            <!-- PAGE CONTENT -->
+            <div class="page-content">
+
+
+                <!-- ==================================
+                     OVERVIEW PAGE
+                =================================== -->
+
+                <section class="page-view active" id="overview-view">
+
+                    <div class="welcome-section">
+                        <div>
+                            <p class="section-label">DASHBOARD</p>
+                            <h1>Welcome back, Madhan.</h1>
+                            <p>Here's what's happening with your portfolio.</p>
+                        </div>
+
+                        <button class="primary-btn" type="button"
+                                data-view-target="projects">
+                            + Manage Projects
+                        </button>
+                    </div>
+
+
+                    <!-- STATISTICS -->
+
+                    <div class="stats-grid">
+
+                        <div class="dashboard-stat">
+                            <div class="stat-top">
+                                <span>Total Projects</span>
+                                <span class="stat-icon">◈</span>
+                            </div>
+
+                            <h2 id="total-projects">--</h2>
+                            <p>Published projects</p>
+                        </div>
+
+
+                        <div class="dashboard-stat">
+                            <div class="stat-top">
+                                <span>Total Skills</span>
+                                <span class="stat-icon">◇</span>
+                            </div>
+
+                            <h2 id="total-skills">--</h2>
+                            <p>Technical skills</p>
+                        </div>
+
+
+                        <div class="dashboard-stat">
+                            <div class="stat-top">
+                                <span>Achievements</span>
+                                <span class="stat-icon">✦</span>
+                            </div>
+
+                            <h2 id="total-achievements">--</h2>
+                            <p>Milestones recorded</p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- OVERVIEW CONTENT -->
+
+                    <div class="overview-grid">
+
+                        <div class="panel recent-panel">
+
+                            <div class="panel-header">
+                                <div>
+                                    <h3>Recent Projects</h3>
+                                    <p>Your latest portfolio projects</p>
+                                </div>
+
+                                <button class="text-btn" type="button"
+                                        data-view-target="projects">
+                                    View All →
+                                </button>
+                            </div>
+
+                            <div id="recent-projects">
+                                <p class="empty-message">Loading projects...</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="panel quick-panel">
+
+                            <div class="panel-header">
+                                <div>
+                                    <h3>Quick Actions</h3>
+                                    <p>Manage your portfolio</p>
+                                </div>
+                            </div>
+
+                            <button class="quick-action" type="button"
+                                    id="quick-add-project">
+                                <span>＋</span>
+                                <div>
+                                    <h4>Add New Project</h4>
+                                    <p>Add work to your portfolio</p>
+                                </div>
+                                <span class="action-arrow">→</span>
+                            </button>
+
+                            <button class="quick-action" type="button"
+                                    id="quick-add-skill">
+                                <span>◇</span>
+                                <div>
+                                    <h4>Add New Skill</h4>
+                                    <p>Update your technical toolkit</p>
+                                </div>
+                                <span class="action-arrow">→</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ==================================
+                     PROJECTS PAGE
+                =================================== -->
+
+                <section class="page-view" id="projects-view">
+
+                    <div class="page-heading">
+
+                        <div>
+                            <p class="section-label">PORTFOLIO CONTENT</p>
+                            <h1>Projects</h1>
+                            <p>Manage the projects displayed on your public portfolio.</p>
+                        </div>
+
+                        <button class="primary-btn" type="button"
+                                id="add-project-btn">
+                            + Add Project
+                        </button>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+                            <div>
+                                <h3>All Projects</h3>
+                                <p>View and manage your work</p>
+                            </div>
+
+                            <span class="item-count" id="project-count">
+                                0 Projects
+                            </span>
+                        </div>
+
+                        <div id="admin-projects-list">
+                            <p class="empty-message">Loading projects...</p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ==================================
+                     SKILLS PAGE
+                =================================== -->
+
+                <section class="page-view" id="skills-view">
+
+                    <div class="page-heading">
+
+                        <div>
+                            <p class="section-label">PORTFOLIO CONTENT</p>
+                            <h1>Skills</h1>
+                            <p>Manage your programming languages, tools and technologies.</p>
+                        </div>
+
+                        <button class="primary-btn" type="button"
+                                id="add-skill-btn">
+                            + Add Skill
+                        </button>
+
+                    </div>
+
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+                            <div>
+                                <h3>Technical Skills</h3>
+                                <p>Manage your skills and categories</p>
+                            </div>
+
+                            <span class="item-count" id="skill-count">
+                                0 Skills
+                            </span>
+                        </div>
+
+                        <div id="admin-skills-list">
+                            <p class="empty-message">Loading skills...</p>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ==================================
+                     ACHIEVEMENTS PAGE
+                =================================== -->
+
+                <section class="page-view" id="achievements-view">
+
+                    <div class="page-heading">
+
+                        <div>
+                            <p class="section-label">MILESTONES</p>
+                            <h1>Achievements</h1>
+                            <p>Your accomplishments and recognitions.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+                            <div>
+                                <h3>All Achievements</h3>
+                                <p>Currently recorded milestones</p>
+                            </div>
+                        </div>
+
+                        <div id="admin-achievements-list">
+                            <p class="empty-message">Loading achievements...</p>
+                        </div>
+
+                    </div>
+
+                    <p class="info-note">
+                        Achievement editing is not enabled yet.
+                        We'll add it if we extend the backend API.
+                    </p>
+
+                </section>
+
+
+
+                <!-- ==================================
+                     SETTINGS PAGE
+                =================================== -->
+
+                <section class="page-view" id="settings-view">
+
+                    <div class="page-heading">
+
+                        <div>
+                            <p class="section-label">CONFIGURATION</p>
+                            <h1>Settings</h1>
+                            <p>Application information and useful links.</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-grid">
+
+                        <div class="panel">
+                            <h3>API Configuration</h3>
+                            <p class="settings-description">
+                                Your portfolio frontend communicates with
+                                the Express backend through this API.
+                            </p>
+
+                            <div class="setting-row">
+                                <span>API URL</span>
+                                <strong>http://localhost:5000/api</strong>
+                            </div>
+
+                            <div class="setting-row">
+                                <span>Connection</span>
+                                <strong id="settings-api-status">Checking...</strong>
+                            </div>
+                        </div>
+
+
+                        <div class="panel">
+                            <h3>Portfolio Links</h3>
+
+                            <p class="settings-description">
+                                Quickly access your public resources.
+                            </p>
+
+                            <a href="../index.html" target="_blank"
+                               rel="noopener noreferrer" class="setting-link">
+                                View Public Portfolio ↗
+                            </a>
+
+                            <a href="http://localhost:5000/api/portfolio"
+                               target="_blank" rel="noopener noreferrer"
+                               class="setting-link">
+                                View Portfolio API ↗
+                            </a>
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+
+    <!-- ==================================
+         PROJECT MODAL
+    =================================== -->
+
+    <div class="modal-overlay" id="project-modal"
+         aria-hidden="true">
+
+        <div class="modal" role="dialog"
+             aria-modal="true" aria-labelledby="project-modal-title">
+
+            <div class="modal-header">
+
+                <div>
+                    <p class="section-label">PROJECT MANAGEMENT</p>
+                    <h2 id="project-modal-title">Add Project</h2>
+                </div>
+
+                <button class="modal-close" type="button"
+                        data-close-modal="project-modal"
+                        aria-label="Close">×</button>
+
+            </div>
+
+
+            <form id="project-form">
+
+                <div class="form-group">
+                    <label for="project-name">Project Name</label>
+                    <input type="text" id="project-name"
+                           placeholder="e.g. SOC Triage Copilot"
+                           required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="project-description">Description</label>
+                    <textarea id="project-description"
+                              rows="4"
+                              placeholder="Describe what your project does..."
+                              required></textarea>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="project-technologies">Technologies</label>
+                    <input type="text" id="project-technologies"
+                           placeholder="JavaScript, Node.js, Express">
+                    <small>Separate technologies using commas.</small>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="project-github">GitHub URL</label>
+                    <input type="url" id="project-github"
+                           placeholder="https://github.com/username/project">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="project-demo">Live Demo URL</label>
+                    <input type="url" id="project-demo"
+                           placeholder="https://example.com">
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button type="button" class="secondary-btn"
+                            data-close-modal="project-modal">
+                        Cancel
+                    </button>
+
+                    <button type="submit" class="primary-btn"
+                            id="project-submit-btn">
+                        Save Project
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================================
+         SKILL MODAL
+    =================================== -->
+
+    <div class="modal-overlay" id="skill-modal"
+         aria-hidden="true">
+
+        <div class="modal" role="dialog"
+             aria-modal="true" aria-labelledby="skill-modal-title">
+
+            <div class="modal-header">
+
+                <div>
+                    <p class="section-label">SKILL MANAGEMENT</p>
+                    <h2 id="skill-modal-title">Add Skill</h2>
+                </div>
+
+                <button class="modal-close" type="button"
+                        data-close-modal="skill-modal"
+                        aria-label="Close">×</button>
+
+            </div>
+
+
+            <form id="skill-form">
+
+                <div class="form-group">
+                    <label for="skill-name">Skill Name</label>
+                    <input type="text" id="skill-name"
+                           placeholder="e.g. Python"
+                           required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="skill-category">Category</label>
+                    <input type="text" id="skill-category"
+                           placeholder="e.g. Programming Languages"
+                           required>
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button type="button" class="secondary-btn"
+                            data-close-modal="skill-modal">
+                        Cancel
+                    </button>
+
+                    <button type="submit" class="primary-btn"
+                            id="skill-submit-btn">
+                        Save Skill
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- NOTIFICATION CONTAINER -->
+    <div id="toast-container" aria-live="polite"
+         aria-atomic="true"></div>
+
+
+</body>
 </html>

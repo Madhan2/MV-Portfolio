@@ -66,6 +66,20 @@ async function loadPortfolio() {
 
     // Extract portfolio information
     const portfolio = result.data;
+    updateStats(portfolio);
+
+function updateStats(portfolio) {
+
+    document.getElementById("stat-projects").textContent =
+        portfolio.projects.length;
+
+    document.getElementById("stat-skills").textContent =
+        portfolio.skills.length;
+
+    document.getElementById("stat-achievements").textContent =
+        portfolio.achievements.length;
+
+}
 
     // Display the information
     displaySkills(portfolio.skills);
