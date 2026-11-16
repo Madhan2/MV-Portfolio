@@ -3,103 +3,246 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Madhan | Portfolio</title>
+    <meta
+      name="description"
+      content="Madhan Vigneswaran - Cybersecurity enthusiast and Computer Science student."
+    />
+    <title>Madhan Vigneswaran | Portfolio</title>
 
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
 
   <body>
-    <!-- Navigation -->
-    <header>
-      <nav>
-        <h2 class="logo">MV.</h2>
+    <!-- NAVIGATION -->
+    <header class="navbar">
+      <a href="#home" class="logo">MV<span>.</span></a>
 
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#resume">My Resume</a></li>
-          <li><a href="#achievements">Achievements</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
       </nav>
+
+      <a href="#contact" class="nav-contact">Let's Talk ↗</a>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home">
-      <p class="tag">root@h4ck3r404:~$ whoami</p>
+    <main>
+      <!-- HERO SECTION -->
+      <section id="home" class="hero section-container">
+        <div class="hero-content">
+          <p class="terminal-text"><span>root@MR-MV:~$</span> whoami</p>
 
-      <h1 id="name">Madhan Vigneswaran</h1>
+          <p class="hero-greeting">HELLO, I'M</p>
 
-      <h3>I'm a <span id="typing-text"></span></h3>
+          <h1>
+            Madhan<br />
+            <span>Vigneswaran.</span>
+          </h1>
 
-      <p>
-        Computer Science student exploring cybersecurity, development and
-        technology.
-      </p>
+          <h2 id="typing-text"></h2>
 
-      <a href="#projects">Explore My Work</a>
-    </section>
+          <p class="hero-description">
+            Exploring the intersection of cybersecurity, technology and software
+            development. Always learning, building and experimenting.
+          </p>
 
-    <!-- About Section -->
-    <section id="about">
-      <h2>About Me</h2>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn-primary"> Explore My Work ↗ </a>
 
-      <p id="about-content">
-        A Computer Science student interested in cybersecurity and software
-        development. I enjoy exploring new technologies and am always curious to
-        learn something that seems complicated I am more interested in the field
-        of cybersecurity. I am always open to connect.
-      </p>
-    </section>
+            <a href="#about" class="btn-secondary"> More About Me </a>
+          </div>
 
-    <!-- Skills Section -->
-   <section id="skills">
-    <h2>Technical Skills</h2>
-    <div id="skills-container"></div>
-</section>
+          <div class="hero-socials">
+            <a
+              href="https://github.com/Madhan2"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub ↗</a
+            >
 
-    <!-- Projects Section -->
-    <section id="projects">
-      <h2>Projects</h2>
+            <a
+              href="https://www.linkedin.com/in/madhan-vigneswaran/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn ↗</a
+            >
+          </div>
+        </div>
 
-      <div id="projects-container" class="projects-grid">
-        <!-- Projects will be added dynamically -->
-      </div>
-    </section>
+        <!-- RIGHT SIDE VISUAL -->
+        <div class="hero-visual">
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <p>MV@portfolio</p>
+            </div>
 
-    <!-- Resume Section -->
-    <section id="resume">
-      <h2>My Resume</h2>
+            <div class="terminal-body">
+              <p><span class="terminal-green">const</span> developer = {</p>
+              <p class="terminal-indent">name: "Madhan Vigneswaran",</p>
+              <p class="terminal-indent">education: "CSE'29 @ UVCE",</p>
+              <p class="terminal-indent">interests: [</p>
+              <p class="terminal-indent terminal-indent-2">"Cybersecurity",</p>
+              <p class="terminal-indent terminal-indent-2">"Development",</p>
+              <p class="terminal-indent terminal-indent-2">"Technology"</p>
+              <p class="terminal-indent">],</p>
+              <p class="terminal-indent">
+                status: <span class="terminal-green">"Learning..."</span>
+              </p>
+              <p>};</p>
+              <br />
+              <p>
+                <span class="terminal-green">></span> Ready to build something.
+              </p>
+              <span class="terminal-cursor">_</span>
+            </div>
+          </div>
 
-      <p>You can view my resume by clicking the button below.</p>
+          <div class="hero-status">
+            <span class="status-dot"></span>
+            Open to learning and collaboration
+          </div>
+        </div>
+      </section>
 
-      <a href="Madhan-Resume.pdf" target="_blank">View Resume</a>
-    </section>
+      <!-- QUICK STATS -->
+      <section class="stats section-container">
+        <div class="stat-card">
+          <h3>9.07</h3>
+          <p>CGPA</p>
+        </div>
 
-    <!-- Achievements Section -->
-    <section id="achievements">
-      <h2>Achievements</h2>
+        <div class="stat-card">
+          <h3>03+</h3>
+          <p>Projects</p>
+        </div>
 
-      <div id="achievements-container" class="projects-grid">
-        <!-- Achievements will be added dynamically -->
-      </div>
-    </section>
+        <div class="stat-card">
+          <h3>04+</h3>
+          <p>CTF / Security Events</p>
+        </div>
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2>Let's Connect</h2>
+        <div class="stat-card">
+          <h3>∞</h3>
+          <p>Things to Learn</p>
+        </div>
+      </section>
 
-      <a href="mailto:madhan.vigneswaran@gmail.com"> Email Me </a>
-    </section>
+      <!-- ABOUT SECTION -->
+      <section id="about" class="section-container content-section">
+        <div class="section-heading">
+          <p class="section-label">01 / ABOUT</p>
+          <h2>A little about <span>me.</span></h2>
+        </div>
 
-    <!-- Footer -->
-    <footer>
-      <p>© 2026 Madhan Vigneswaran - CSE'29 at UVCE</p>
+        <div class="about-layout">
+          <div class="about-main">
+            <h3>Curious by default.<br />Driven by curiosity.</h3>
+
+            <div id="about-content">
+              <p>
+                I'm a Computer Science student at UVCE, interested in
+                cybersecurity, ethical hacking and software development.
+              </p>
+              <p>
+                I enjoy exploring new technologies, solving problems and
+                building projects that turn ideas into working solutions.
+              </p>
+            </div>
+          </div>
+
+          <div class="about-details">
+            <div class="detail-card">
+              <span>EDUCATION</span>
+              <h4>Computer Science & Engineering</h4>
+              <p>University Visvesvaraya College of Engineering</p>
+            </div>
+
+            <div class="detail-card">
+              <span>CURRENT FOCUS</span>
+              <h4>Cybersecurity & Development</h4>
+              <p>Learning through projects, labs and competitions</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS SECTION -->
+      <section id="skills" class="section-container content-section">
+        <div class="section-heading">
+          <p class="section-label">02 / TOOLKIT</p>
+          <h2>Technologies I <span>work with.</span></h2>
+          <p class="section-description">
+            Tools and technologies I'm learning and using.
+          </p>
+        </div>
+
+        <div id="skills-container" class="skills-layout">
+          <!-- Skills will be loaded from the API -->
+        </div>
+      </section>
+
+      <!-- PROJECTS SECTION -->
+      <section id="projects" class="section-container content-section">
+        <div class="section-heading section-heading-row">
+          <div>
+            <p class="section-label">03 / MY WORK</p>
+            <h2>Things I've <span>built.</span></h2>
+          </div>
+
+          <p class="section-description">
+            Projects.
+          </p>
+        </div>
+
+        <div id="projects-container" class="projects-grid">
+          <!-- Projects will be loaded from the API -->
+        </div>
+      </section>
+
+      <!-- ACHIEVEMENTS SECTION -->
+      <section id="achievements" class="section-container content-section">
+        <div class="section-heading">
+          <p class="section-label">04 / MILESTONES</p>
+          <h2>Achievements & <span>recognition.</span></h2>
+        </div>
+
+        <div id="achievements-container" class="achievements-grid">
+          <!-- Achievements will be loaded from the API -->
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="section-container contact-section">
+        <p class="section-label">05 / CONTACT</p>
+
+        <h2>
+          Wanna connect with me?<br />
+          <span>Let's get along.</span>
+        </h2>
+
+        <p>
+          Open to collaboration, learning opportunities and interesting
+          conversations.
+        </p>
+
+        <a href="mailto:madhan.vigneswaran@gmail.com" class="btn-primary">
+          Contact Me ↗
+        </a>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>© 2026 Madhan Vigneswaran</p>
+      <p>Designed & built with curiosity <span>♥</span></p>
     </footer>
-
-    <script src="scripts.js"></script>
   </body>
 </html>

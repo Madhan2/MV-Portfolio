@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | Madhan</title>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+
+  <body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <span class="terminal-symbol">></span> ADMIN<span class="green"
+          >.EXE</span
+        >
+      </div>
+
+      <p class="sidebar-label">MENU</p>
+
+      <nav class="sidebar-nav">
+        <a href="#overview" class="nav-link active">
+          <span>▣</span> Overview
+        </a>
+
+        <a href="#projects" class="nav-link"> <span>▤</span> Projects </a>
+
+        <a href="#skills" class="nav-link"> <span>⚙</span> Skills </a>
+
+        <a href="#quick-links" class="nav-link"> <span>↗</span> Quick Links </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="admin-profile">
+          <div class="profile-avatar">MV</div>
+          <div>
+            <strong>Madhan</strong>
+            <small>Administrator</small>
+          </div>
+        </div>
+
+        <a href="../index.html" class="back-link"> ← View Portfolio </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Topbar -->
+      <header class="topbar">
+        <div>
+          <p class="breadcrumb">ADMIN / DASHBOARD</p>
+          <h1>Dashboard<span class="green">.</span></h1>
+        </div>
+
+        <div class="system-status">
+          <span class="status-dot"></span>
+          System Online
+        </div>
+      </header>
+
+      <!-- Overview -->
+      <section id="overview" class="dashboard-section">
+        <div class="welcome-section">
+          <div>
+            <p class="section-tag">// CONTROL CENTER</p>
+            <h2>Welcome back, Madhan.</h2>
+            <p>Manage your portfolio content from here.</p>
+          </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <p>Total Projects</p>
+            <h2 id="total-projects">0</h2>
+            <span>Projects in portfolio</span>
+          </div>
+
+          <div class="stat-card">
+            <p>Total Skills</p>
+            <h2 id="total-skills">0</h2>
+            <span>Skills listed</span>
+          </div>
+
+          <div class="stat-card">
+            <p>Achievements</p>
+            <h2 id="total-achievements">0</h2>
+            <span>Achievements listed</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Management -->
+      <section id="projects" class="dashboard-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-tag">// PROJECT MANAGEMENT</p>
+            <h2>Manage Projects</h2>
+          </div>
+        </div>
+
+        <!-- Add Project Form -->
+        <div class="admin-panel">
+          <h3>Add New Project</h3>
+
+          <form id="project-form">
+            <div class="form-group">
+              <label for="project-name">Project Name</label>
+              <input
+                type="text"
+                id="project-name"
+                placeholder="Enter project name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="project-description">Description</label>
+              <textarea
+                id="project-description"
+                placeholder="Describe your project"
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="project-technologies"> Technologies </label>
+              <input
+                type="text"
+                id="project-technologies"
+                placeholder="React, Node.js, MongoDB"
+              />
+              <small>Separate technologies with commas.</small>
+            </div>
+
+            <div class="form-group">
+              <label for="project-github">GitHub URL</label>
+              <input
+                type="url"
+                id="project-github"
+                placeholder="https://github.com/..."
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="project-demo">Live Demo URL</label>
+              <input type="url" id="project-demo" placeholder="https://..." />
+            </div>
+
+            <button type="submit" class="primary-btn">+ Add Project</button>
+          </form>
+        </div>
+
+        <!-- Existing Projects -->
+        <div class="admin-panel">
+          <h3>Existing Projects</h3>
+
+          <div id="admin-projects-list">
+            <!-- JavaScript will populate projects here -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Management -->
+      <section id="skills" class="dashboard-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-tag">// SKILL MANAGEMENT</p>
+            <h2>Manage Skills</h2>
+          </div>
+        </div>
+
+        <!-- Add Skill Form -->
+        <div class="admin-panel">
+          <h3>Add New Skill</h3>
+
+          <form id="skill-form">
+            <div class="form-group">
+              <label for="skill-name">Skill Name</label>
+              <input
+                type="text"
+                id="skill-name"
+                placeholder="Enter skill name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="skill-category">Category</label>
+
+              <select id="skill-category" required>
+                <option value="">Select Category</option>
+                <option value="Programming Languages">
+                  Programming Languages
+                </option>
+                <option value="Tools & Platforms">Tools & Platforms</option>
+                <option value="Cybersecurity">Cybersecurity</option>
+                <option value="Web Technologies">Web Technologies</option>
+              </select>
+            </div>
+
+            <button type="submit" class="primary-btn">+ Add Skill</button>
+          </form>
+        </div>
+
+        <!-- Existing Skills -->
+        <div class="admin-panel">
+          <h3>Existing Skills</h3>
+
+          <div id="admin-skills-list">
+            <!-- JavaScript will populate skills here -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Links -->
+      <section id="quick-links" class="dashboard-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-tag">// NAVIGATION</p>
+            <h2>Quick Links</h2>
+          </div>
+        </div>
+
+        <div class="quick-links-grid">
+          <a href="../index.html" target="_blank"> View Public Portfolio ↗ </a>
+
+          <a href="http://localhost:5000/api/portfolio" target="_blank">
+            View Portfolio API ↗
+          </a>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="admin-footer">
+        <p>Built by Madhan Vigneswaran | Portfolio Admin Panel</p>
+        <p>System Status: <span class="green">Operational</span></p>
+      </footer>
+    </main>
+
+    <script src="admin.js" defer></script>
+  </body>
+</html>

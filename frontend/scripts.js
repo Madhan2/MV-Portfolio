@@ -169,15 +169,24 @@ function displayProjects(projects) {
 }
 
 // Display achievements
+
 function displayAchievements(achievements) {
   const container = document.getElementById("achievements-container");
+
   container.replaceChildren();
 
   achievements.forEach((achievement) => {
     const card = document.createElement("div");
-    card.className = "card";
-    card.textContent = achievement;
+    card.className = "achievement-card";
 
+    const icon = document.createElement("div");
+    icon.className = "achievement-icon";
+    icon.textContent = "✦";
+
+    const content = document.createElement("p");
+    content.textContent = achievement;
+
+    card.append(icon, content);
     container.appendChild(card);
   });
 }
