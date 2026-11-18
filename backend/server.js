@@ -1,9 +1,13 @@
+require("dotenv").config();
+
+
 const errorHandler = require("./middleware/errorHandler");
 
 const express = require("express");
 const cors = require("cors");
 
 // Import route files
+const authRoutes = require("./routes/authRoutes");
 const resourceRoutes = require("./routes/resourceRoutes");
 const achievementRoutes = require("./routes/achievementRoutes");
 const portfolioRoutes = require("./routes/portfolioRoutes");
@@ -46,9 +50,11 @@ app.get("/api/health", (req, res) => {
 });
 
 // Register routes
+app.use("/api/auth", authRoutes);
 app.use("/api/portfolio", portfolioRoutes);
 app.use("/api/achievements", achievementRoutes);
 app.use("/api", resourceRoutes);
+
 
 // Handle unknown routes
 app.use((req, res) => {
