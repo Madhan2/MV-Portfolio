@@ -103,8 +103,8 @@ a {
 }
 
 .sidebar-label {
-    color: #627167;
-    font-size: 10px;
+    color: #00ff55;
+    font-size: 20px;
     letter-spacing: 2px;
     padding: 0 12px;
     margin-bottom: 12px;
@@ -131,7 +131,7 @@ a {
 
     color: var(--muted);
     text-align: left;
-    font-size: 13px;
+    font-size: 17px;
 
     transition: 0.25s;
 }
@@ -171,24 +171,24 @@ a {
 .topbar-avatar {
     width: 38px;
     height: 38px;
-    border-radius: 9px;
+    border-radius: 10px;
     background: #20392a;
     color: var(--green);
 
     display: grid;
     place-items: center;
 
-    font-size: 12px;
+    font-size: 20px;
     font-weight: bold;
 }
 
 .admin-profile h4 {
-    font-size: 13px;
+    font-size: 16px;
 }
 
 .admin-profile p {
     color: var(--muted);
-    font-size: 11px;
+    font-size: 14px;
 }
 
 .view-portfolio {
@@ -200,7 +200,7 @@ a {
     border-radius: 7px;
 
     color: var(--green);
-    font-size: 12px;
+    font-size: 17px;
 
     transition: 0.3s;
 }
@@ -252,7 +252,7 @@ a {
 
 .breadcrumb {
     color: var(--muted);
-    font-size: 11px;
+    font-size: 21px;
     margin-bottom: 5px;
 }
 
@@ -275,7 +275,7 @@ a {
     align-items: center;
     gap: 9px;
     color: var(--muted);
-    font-size: 11px;
+    font-size: 15px;
 }
 
 .status-dot {
@@ -299,7 +299,7 @@ a {
     border: 1px solid var(--border);
     border-radius: 6px;
     padding: 7px 11px;
-    font-size: 19px;
+    font-size: 29px;
 }
 
 
@@ -337,7 +337,7 @@ a {
 
 .section-label {
     color: var(--green);
-    font-size: 10px;
+    font-size: 20px;
     letter-spacing: 3px;
     margin-bottom: 10px;
 }
@@ -366,7 +366,7 @@ a {
 .welcome-section p:not(.section-label),
 .page-heading p:not(.section-label) {
     color: var(--muted);
-    font-size: 12px;
+    font-size: 20px;
 }
 
 
@@ -378,19 +378,19 @@ a {
 .secondary-btn {
     padding: 12px 18px;
     border-radius: 6px;
-    font-size: 12px;
+    font-size: 17px;
     border: 1px solid transparent;
     transition: 0.25s;
 }
 
 .primary-btn {
     background: var(--green);
-    color: #07120b;
+    color: #0d1b12;
     font-weight: bold;
 }
 
 .primary-btn:hover {
-    background: #8affb4;
+    background: #11ff00;
     transform: translateY(-2px);
     box-shadow: 0 5px 20px rgba(101, 232, 154, 0.12);
 }
@@ -410,7 +410,7 @@ a {
     background: transparent;
     border: none;
     color: var(--green);
-    font-size: 11px;
+    font-size: 21px;
 }
 
 .text-btn:hover {
@@ -448,7 +448,7 @@ a {
     align-items: center;
 
     color: var(--muted);
-    font-size: 12px;
+    font-size: 22px;
 }
 
 .stat-icon {
@@ -463,7 +463,7 @@ a {
 }
 
 .dashboard-stat > p {
-    font-size: 11px;
+    font-size: 21px;
     color: var(--muted);
 }
 
@@ -497,19 +497,19 @@ a {
 
 .panel-header h3,
 .panel > h3 {
-    font-size: 15px;
+    font-size: 25px;
     margin-bottom: 5px;
 }
 
 .panel-header p,
 .settings-description {
     color: var(--muted);
-    font-size: 11px;
+    font-size: 17px;
 }
 
 .item-count {
     color: var(--green);
-    font-size: 11px;
+    font-size: 17px;
     white-space: nowrap;
 }
 
@@ -517,7 +517,7 @@ a {
     color: var(--muted);
     text-align: center;
     padding: 35px 10px;
-    font-size: 12px;
+    font-size: 18px;
 }
 
 
@@ -572,13 +572,13 @@ a {
 }
 
 .quick-action h4 {
-    font-size: 12px;
+    font-size: 17px;
     margin-bottom: 4px;
 }
 
 .quick-action p {
     color: var(--muted);
-    font-size: 10px;
+    font-size: 15px;
 }
 
 .action-arrow {
@@ -617,14 +617,14 @@ a {
 }
 
 .admin-item-info h4 {
-    font-size: 13px;
+    font-size: 20px;
     margin-bottom: 5px;
     overflow-wrap: anywhere;
 }
 
 .admin-item-info p {
     color: var(--muted);
-    font-size: 11px;
+    font-size: 17px;
     overflow-wrap: anywhere;
 }
 
@@ -641,7 +641,7 @@ a {
     border: 1px solid var(--border);
     border-radius: 5px;
     color: var(--text);
-    font-size: 10px;
+    font-size: 20px;
     transition: 0.2s;
 }
 
@@ -659,7 +659,7 @@ a {
     display: inline-block;
     margin-top: 7px;
     color: var(--green);
-    font-size: 10px;
+    font-size: 17px;
 }
 
 .recent-project-item {
@@ -672,12 +672,12 @@ a {
 }
 
 .recent-project-item h4 {
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .recent-project-item p {
     color: var(--muted);
-    font-size: 10px;
+    font-size: 13px;
     margin-top: 4px;
 }
 
@@ -706,7 +706,7 @@ a {
     padding: 13px 0;
     border-top: 1px solid var(--border);
 
-    font-size: 11px;
+    font-size: 19px;
 }
 
 .setting-row span {
@@ -723,7 +723,7 @@ a {
     display: block;
     padding: 14px 0;
     border-top: 1px solid var(--border);
-    font-size: 12px;
+    font-size: 20px;
     color: var(--green);
 }
 
@@ -733,7 +733,7 @@ a {
 
 .info-note {
     color: var(--muted);
-    font-size: 11px;
+    font-size: 21px;
     margin-top: 18px;
 }
 
@@ -877,7 +877,7 @@ a {
     display: block;
     margin-top: 7px;
     color: var(--muted);
-    font-size: 10px;
+    font-size: 17px;
 }
 
 .modal-actions {
