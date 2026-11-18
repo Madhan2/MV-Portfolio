@@ -129,11 +129,68 @@ function displayAchievements(achievements) {
     info.className = "admin-item-info";
 
     const name = document.createElement("h3");
-    name.textContent = achievement;
+    name.textContent = achievement.name;
 
     info.appendChild(name);
-    item.appendChild(info);
 
+    const actions = document.createElement("div");
+    actions.className = "admin-item-actions";
+
+    const editButton = document.createElement("button");
+    editButton.className = "action-btn edit-achievement";
+    editButton.textContent = "Edit";
+    editButton.dataset.id = achievement.id;
+
+    const deleteButton = document.createElement("button");
+    deleteButton.className = "action-btn delete-achievement";
+    deleteButton.textContent = "Delete";
+    deleteButton.dataset.id = achievement.id;
+
+    actions.append(editButton, deleteButton);
+
+    item.append(info, actions);
+    container.appendChild(item);
+  });
+}
+
+function displayAchievements(achievements) {
+  const container = document.getElementById("admin-achievements-list");
+
+  container.replaceChildren();
+
+  if (achievements.length === 0) {
+    container.textContent = "No achievements available.";
+    return;
+  }
+
+  achievements.forEach((achievement) => {
+    const item = document.createElement("div");
+    item.className = "admin-item";
+
+    const info = document.createElement("div");
+    info.className = "admin-item-info";
+
+    const name = document.createElement("h3");
+    name.textContent = achievement.name;
+
+    info.appendChild(name);
+
+    const actions = document.createElement("div");
+    actions.className = "admin-item-actions";
+
+    const editButton = document.createElement("button");
+    editButton.className = "action-btn edit-achievement";
+    editButton.textContent = "Edit";
+    editButton.dataset.id = achievement.id;
+
+    const deleteButton = document.createElement("button");
+    deleteButton.className = "action-btn delete-achievement";
+    deleteButton.textContent = "Delete";
+    deleteButton.dataset.id = achievement.id;
+
+    actions.append(editButton, deleteButton);
+
+    item.append(info, actions);
     container.appendChild(item);
   });
 }
@@ -751,3 +808,174 @@ document
       }
     }
   });
+
+
+// =====================================
+// 24. ACHIEVEMENT MODAL
+// =====================================
+
+let editingAchievementId = null;
+
+const achievementModal =
+    document.getElementById("achievement-modal");
+
+const achievementForm =
+    document.getElementById("achievement-form");
+
+
+function openAchievementModal(achievement = null) {
+
+    achievementForm.reset();
+
+    if (achievement) {
+
+        editingAchievementId = achievement.id;
+
+        document.getElementById("achievement-modal-title").textContent =
+            "Edit Achievement";
+
+        document.getElementById("achievement-submit-btn").textContent =
+            "Update Achievement";
+
+        document.getElementById("achievement-name").value =
+            achievement.name;
+
+    } else {
+
+        editingAchievementId = null;
+
+        document.getElementById("achievement-modal-title").textContent =
+            "Add Achievement";
+
+        document.getElementById("achievement-submit-btn").textContent =
+            "Save Achievement";
+    }
+
+    achievementModal.classList.add("active");
+    achievementModal.setAttribute("aria-hidden", "false");
+}
+
+
+// Open Add Achievement
+document.getElementById("add-achievement-btn")
+    .addEventListener("click", () => {
+        openAchievementModal();
+    });
+
+
+// Save or Update Achievement
+achievementForm.addEventListener("submit", async event => {
+
+    event.preventDefault();
+
+    const achievement = {
+        name: document.getElementById("achievement-name").value.trim()
+    };
+
+    const isEditing = editingAchievementId !== null;
+
+    const endpoint = isEditing
+        ? `/achievements/${editingAchievementId}`
+        : "/achievements";
+
+    const method = isEditing ? "PUT" : "POST";
+
+    try {
+
+        const response = await fetch(`${API_URL}${endpoint}`, {
+            method,
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(achievement)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+            throw new Error(result.message || "Unable to save achievement");
+        }
+
+        achievementModal.classList.remove("active");
+        achievementModal.setAttribute("aria-hidden", "true");
+
+        showToast(isEditing
+            ? "Achievement updated!"
+            : "Achievement added!");
+
+        await loadDashboard();
+
+    } catch (error) {
+
+        console.error(error);
+        showToast(error.message, true);
+
+    }
+
+});
+
+
+// Edit and Delete Achievement
+document.getElementById("admin-achievements-list")
+    .addEventListener("click", async event => {
+
+        const editButton = event.target.closest(".edit-achievement");
+        const deleteButton = event.target.closest(".delete-achievement");
+
+        // EDIT
+        if (editButton) {
+
+            try {
+
+                const result = await fetchAPI("/achievements");
+
+                const achievement = result.data.find(
+                    item => String(item.id) === String(editButton.dataset.id)
+                );
+
+                if (!achievement) {
+                    throw new Error("Achievement not found");
+                }
+
+                openAchievementModal(achievement);
+
+            } catch (error) {
+
+                showToast(error.message, true);
+
+            }
+        }
+
+        // DELETE
+        if (deleteButton) {
+
+            const confirmed = confirm(
+                "Are you sure you want to delete this achievement?"
+            );
+
+            if (!confirmed) return;
+
+            try {
+
+                const response = await fetch(
+                    `${API_URL}/achievements/${deleteButton.dataset.id}`,
+                    { method: "DELETE" }
+                );
+
+                const result = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(result.message || "Delete failed");
+                }
+
+                showToast("Achievement deleted!");
+
+                await loadDashboard();
+
+            } catch (error) {
+
+                showToast(error.message, true);
+
+            }
+        }
+    });

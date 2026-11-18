@@ -52,10 +52,10 @@ const skills = [
 ];
 
 const achievements = [
-    "9.07 CGPA",
-    "4th Place - H4CKING Event",
-    "GDG Capture The Flag",
-    "CodePup Vibe Coding Hackathon"
+    { id: "1", name: "9.07 CGPA" },
+    { id: "2", name: "4th Place - H4CKING Event" },
+    { id: "3", name: "GDG Capture The Flag" },
+    { id: "4", name: "CodePup Vibe Coding Hackathon" }
 ];
 
 module.exports = {

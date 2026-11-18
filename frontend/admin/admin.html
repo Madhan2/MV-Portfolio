@@ -341,7 +341,9 @@
                         </div>
 
                     </div>
-
+<button class="btn-primary" id="add-achievement-btn">
+    + Add Achievement
+</button>
                     <div class="panel">
 
                         <div class="panel-header">
@@ -357,10 +359,6 @@
 
                     </div>
 
-                    <p class="info-note">
-                        Achievement editing is not enabled yet.
-                        We'll add it if we extend the backend API.
-                    </p>
 
                 </section>
 
@@ -584,6 +582,48 @@
 
     </div>
 
+
+<div class="modal-overlay" id="achievement-modal" aria-hidden="true">
+    <div class="modal">
+
+        <div class="modal-header">
+            <h2 id="achievement-modal-title">Add Achievement</h2>
+
+            <button type="button"
+                    class="modal-close"
+                    data-close-modal="achievement-modal">
+                &times;
+            </button>
+        </div>
+
+        <form id="achievement-form">
+
+            <div class="form-group">
+                <label for="achievement-name">Achievement</label>
+                <input
+                    type="text"
+                    id="achievement-name"
+                    placeholder="Enter achievement"
+                    required
+                >
+            </div>
+
+            <div class="modal-actions">
+                <button type="button"
+                        class="btn-secondary"
+                        data-close-modal="achievement-modal">
+                    Cancel
+                </button>
+
+                <button type="submit" id="achievement-submit-btn">
+                    Save Achievement
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
 
 
     <!-- NOTIFICATION CONTAINER -->

@@ -5,6 +5,7 @@ const cors = require("cors");
 
 // Import route files
 const resourceRoutes = require("./routes/resourceRoutes");
+const achievementRoutes = require("./routes/achievementRoutes");
 const portfolioRoutes = require("./routes/portfolioRoutes");
 
 const app = express();
@@ -46,6 +47,7 @@ app.get("/api/health", (req, res) => {
 
 // Register routes
 app.use("/api/portfolio", portfolioRoutes);
+app.use("/api/achievements", achievementRoutes);
 app.use("/api", resourceRoutes);
 
 // Handle unknown routes
@@ -71,3 +73,4 @@ app.use(errorHandler);
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
+

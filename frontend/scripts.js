@@ -185,24 +185,24 @@ function displayProjects(projects) {
 // Display achievements
 
 function displayAchievements(achievements) {
-  const container = document.getElementById("achievements-container");
+    const container = document.getElementById("achievements-container");
 
-  container.replaceChildren();
+    container.replaceChildren();
 
-  achievements.forEach((achievement) => {
-    const card = document.createElement("div");
-    card.className = "achievement-card";
+    achievements.forEach(achievement => {
+        const card = document.createElement("div");
+        card.className = "achievement-card";
 
-    const icon = document.createElement("div");
-    icon.className = "achievement-icon";
-    icon.textContent = "✦";
+        const icon = document.createElement("div");
+        icon.className = "achievement-icon";
+        icon.textContent = "✦";
 
-    const content = document.createElement("p");
-    content.textContent = achievement;
+        const content = document.createElement("p");
+        content.textContent = achievement.name;
 
-    card.append(icon, content);
-    container.appendChild(card);
-  });
+        card.append(icon, content);
+        container.appendChild(card);
+    });
 }
 
 // Load everything when the page opens
