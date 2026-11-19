@@ -1,5 +1,10 @@
 require("dotenv").config();
 
+const cookieParser = require("cookie-parser");
+const helmet = require("helmet");
+
+const authRoutes = require("./routes/authRoutes");
+
 
 const errorHandler = require("./middleware/errorHandler");
 
@@ -7,7 +12,6 @@ const express = require("express");
 const cors = require("cors");
 
 // Import route files
-const authRoutes = require("./routes/authRoutes");
 const resourceRoutes = require("./routes/resourceRoutes");
 const achievementRoutes = require("./routes/achievementRoutes");
 const portfolioRoutes = require("./routes/portfolioRoutes");
@@ -15,8 +19,16 @@ const portfolioRoutes = require("./routes/portfolioRoutes");
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(helmet());
+
+app.use(cors({
+    origin: process.env.FRONTEND_ORIGIN,
+    credentials: true
+}));
+
 app.use(express.json());
+
+app.use(cookieParser());
 
 // Main server route
 app.get("/", (req, res) => {
@@ -50,9 +62,12 @@ app.get("/api/health", (req, res) => {
 });
 
 // Register routes
-app.use("/api/auth", authRoutes);
 app.use("/api/portfolio", portfolioRoutes);
+
+app.use("/api/auth", authRoutes);
+
 app.use("/api/achievements", achievementRoutes);
+
 app.use("/api", resourceRoutes);
 
 
