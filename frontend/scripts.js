@@ -49,7 +49,7 @@ function typeEffect() {
 typeEffect();
 
 // Backend API address
-const API_URL = "http://localhost:5000/api";
+const API_URL = "http://127.0.0.1:5000/api";
 
 // Fetch portfolio information
 async function loadPortfolio() {
@@ -68,18 +68,16 @@ async function loadPortfolio() {
     const portfolio = result.data;
     updateStats(portfolio);
 
-function updateStats(portfolio) {
-
-    document.getElementById("stat-projects").textContent =
+    function updateStats(portfolio) {
+      document.getElementById("stat-projects").textContent =
         portfolio.projects.length;
 
-    document.getElementById("stat-skills").textContent =
+      document.getElementById("stat-skills").textContent =
         portfolio.skills.length;
 
-    document.getElementById("stat-achievements").textContent =
+      document.getElementById("stat-achievements").textContent =
         portfolio.achievements.length;
-
-}
+    }
 
     // Display the information
     displaySkills(portfolio.skills);
@@ -185,24 +183,24 @@ function displayProjects(projects) {
 // Display achievements
 
 function displayAchievements(achievements) {
-    const container = document.getElementById("achievements-container");
+  const container = document.getElementById("achievements-container");
 
-    container.replaceChildren();
+  container.replaceChildren();
 
-    achievements.forEach(achievement => {
-        const card = document.createElement("div");
-        card.className = "achievement-card";
+  achievements.forEach((achievement) => {
+    const card = document.createElement("div");
+    card.className = "achievement-card";
 
-        const icon = document.createElement("div");
-        icon.className = "achievement-icon";
-        icon.textContent = "✦";
+    const icon = document.createElement("div");
+    icon.className = "achievement-icon";
+    icon.textContent = "✦";
 
-        const content = document.createElement("p");
-        content.textContent = achievement.name;
+    const content = document.createElement("p");
+    content.textContent = achievement.name;
 
-        card.append(icon, content);
-        container.appendChild(card);
-    });
+    card.append(icon, content);
+    container.appendChild(card);
+  });
 }
 
 // Load everything when the page opens
