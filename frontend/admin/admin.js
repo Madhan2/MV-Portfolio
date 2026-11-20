@@ -597,7 +597,7 @@ projectForm.addEventListener("submit", async (event) => {
       headers: {
         "Content-Type": "application/json",
       },
-
+      credentials: "include",
       body: JSON.stringify(project),
     });
 
@@ -666,6 +666,7 @@ document
       try {
         const response = await fetch(`${API_URL}/projects/${projectId}`, {
           method: "DELETE",
+          credentials: "include",
         });
 
         const result = await response.json();
@@ -754,7 +755,7 @@ skillForm.addEventListener("submit", async (event) => {
       headers: {
         "Content-Type": "application/json",
       },
-
+      credentials: "include",
       body: JSON.stringify(skill),
     });
 
@@ -820,6 +821,7 @@ document
       try {
         const response = await fetch(`${API_URL}/skills/${skillId}`, {
           method: "DELETE",
+          credentials: "include",
         });
 
         const result = await response.json();
