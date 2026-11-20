@@ -235,11 +235,21 @@ node server.js
 
 Open the `frontend` folder using Visual Studio Code and launch `index.html` using the Live Server extension.
 
-### 6. Access the application
 
-- Public portfolio: `http://127.0.0.1:5500/frontend/index.html`
-- Admin login: `http://127.0.0.1:5500/frontend/admin/login.html`
-- Backend API: `http://127.0.0.1:5000/api`
+### 6. Access the Application
+
+| Application | URL |
+|---|---|
+| Public Portfolio | https://mv-portfolio-jexj.onrender.com/ |
+| Admin Login | https://mv-portfolio-jexj.onrender.com/admin/login.html |
+| Admin Dashboard | https://mv-portfolio-jexj.onrender.com/admin/admin.html |
+| Backend API | https://mv-portfolio-jexj.onrender.com/api |
+| API Health Check | https://mv-portfolio-jexj.onrender.com/api/health |
+
+**Deployment Platform:** Render
+
+**Architecture:** Single Node.js + Express Web Service serving both frontend and backend.
+
 
 ## Security Measures
 
