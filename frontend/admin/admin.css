@@ -1,7 +1,9 @@
 /* =========================================
    1. GLOBAL SETTINGS
 ========================================= */
-
+body.auth-checking .dashboard {
+  visibility: hidden;
+}
 :root {
   --bg: #080d0a;
   --sidebar: #0c130e;

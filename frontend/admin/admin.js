@@ -399,11 +399,12 @@ initializeDashboard = async function () {
 };
 
 async function startDashboard() {
-  const isAuthenticated = await checkAdminAuthentication();
+    const isAuthenticated = await checkAdminAuthentication();
 
-  if (isAuthenticated) {
-    initializeDashboard();
-  }
+    if (isAuthenticated) {
+        document.body.classList.remove("auth-checking");
+        initializeDashboard();
+    }
 }
 
 startDashboard();
