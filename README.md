@@ -42,7 +42,7 @@ A dynamic, responsive portfolio website built using HTML, CSS, JavaScript, Node.
 ## Project Structure
 
 ```text
-personal-portfolio/
+MV-portfolio/
 ├── frontend/
 │   ├── index.html
 │   ├── style.css
@@ -71,20 +71,21 @@ personal-portfolio/
 
 ## Architecture
 
-                 ┌────────────────────────────────────────────────────┐
-                 │                  FRONTEND                          │
-                 │                                                    │
- Public Portfolio │  frontend/index.html                              │
- ────────────────►│  ├── style.css                                    │
+```
+                  ┌────────────────────────────────────────────────────┐
+                  │                  FRONTEND                          │
+                  │                                                    │
+ Public Portfolio │  frontend/index.html                               │
+ ────────────────►│  ├── style.css                                     │
    GET requests   │  └── scripts.js                                    │
-                 │                  │                                 │
- Admin Dashboard  │  frontend/admin/                                  │
- ────────────────►│  ├── login.html  ──► login.js                     │
-  CRUD requests   │  ├── admin.html  ──► admin.js                     │
-                 │  └── admin.css                                    │
-                 └──────────────────┬─────────────────────────────────┘
-                                    │
-                              HTTP / JSON
+                  │                  │                                 │
+ Admin Dashboard  │  frontend/admin/                                   │
+ ────────────────►│  ├── login.html  ──► login.js                      │
+  CRUD requests   │  ├── admin.html  ──► admin.js                      │
+                  │  └── admin.css                                     │
+                  └──────────────────┬─────────────────────────────────┘
+                                     │
+                                HTTP / JSON
                                     │
                                     ▼
                  ┌────────────────────────────────────────────────────┐
@@ -134,6 +135,8 @@ personal-portfolio/
                  │       └── Achievements                             │
                  │                                                    │
                  └────────────────────────────────────────────────────┘
+```
+
 ## API Endpoints
 
 ### Portfolio
@@ -235,7 +238,7 @@ Open the `frontend` folder using Visual Studio Code and launch `index.html` usin
 ### 6. Access the application
 
 - Public portfolio: `http://127.0.0.1:5500/frontend/index.html`
-- Admin login: `http://127.0.0.1:5500/admin/frontend/login.html`
+- Admin login: `http://127.0.0.1:5500/frontend/admin/login.html`
 - Backend API: `http://127.0.0.1:5000/api`
 
 ## Security Measures
@@ -258,9 +261,10 @@ Open the `frontend` folder using Visual Studio Code and launch `index.html` usin
 - Deployment and production configuration are separate from the local development setup.
 
 
-## Author
+## Developer
 
 **Madhan Vigneswaran**
 
 ***Computer Science and Engineering - 2029***
+
 ***University Visvesvaraya College of Engineering (UVCE)***
