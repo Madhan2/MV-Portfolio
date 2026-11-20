@@ -63,7 +63,7 @@ MV-portfolio/
 │   ├── middleware/
 │   ├── server.js
 │   ├── package.json
-│   └── .env
+│   └── .env.example
 │
 ├── .gitignore
 └── README.md
@@ -231,10 +231,15 @@ If no start script exists, use:
 node server.js
 ```
 
-### 5. Start the frontend
+### 5. Start the Application
 
-Open the `frontend` folder using Visual Studio Code and launch `index.html` using the Live Server extension.
+From the backend directory, run:
 
+```bash
+npm start
+```
+Open the application at : http://localhost:5000/
+> Before starting the server, users need to create their own `backend/.env` using `.env.example` . 
 
 ### 6. Access the Application
 
