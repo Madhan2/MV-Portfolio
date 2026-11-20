@@ -191,7 +191,7 @@ MV-portfolio/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Madhan2/MV-Portfolio
+git clone https://github.com/Madhan2/MV-Portfolio.git
 cd MV-Portfolio
 ```
 
@@ -204,13 +204,15 @@ npm install
 
 ### 3. Configure environment variables
 
-Create a `.env` file inside the backend folder.
+Create a `.env` file inside the backend folder using the .env.example file as a reference.
+```cp .env.example .env```
 
-Configure the following variables:
+
+Configure the following variables: (i.e. Update the values in .env with your own config)
 
 ```env
 PORT=5000
-ADMIN_USERNAME=admin
+ADMIN_USERNAME=Admin login username
 ADMIN_PASSWORD_HASH=your_bcrypt_password_hash
 JWT_SECRET=your_secure_random_secret
 FRONTEND_ORIGIN=http://127.0.0.1:5500
@@ -219,29 +221,24 @@ NODE_ENV=development
 
 Never commit your actual `.env` file or authentication secrets.
 
-### 4. Start the backend
+### 4. Start the backend server
 
 ```bash
 npm start
 ```
 
-If no start script exists, use:
+### 5. Open the Application
 
-```bash
-node server.js
-```
+| Application | URL |
+|---|---|
+| Portfolio | http://localhost:5000/ |
+| Admin Dashboard | http://localhost:5000/admin/admin.html |
+| API | http://localhost:5000/api |
+| Health Check | http://localhost:5000/api/health |
 
-### 5. Start the Application
-
-From the backend directory, run:
-
-```bash
-npm start
-```
-Open the application at : http://localhost:5000/
 > Before starting the server, users need to create their own `backend/.env` using `.env.example` . 
 
-### 6. Access the Application
+### 6. Access the Application (Deployed URLs)
 
 | Application | URL |
 |---|---|
