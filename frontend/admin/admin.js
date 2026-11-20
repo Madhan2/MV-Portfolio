@@ -34,8 +34,11 @@ const settingsApiStatus = document.getElementById("settings-api-status");
 // 3. FETCH HELPER
 // =====================================
 
-async function fetchAPI(endpoint) {
-  const response = await fetch(`${API_URL}${endpoint}`);
+async function fetchAPI(endpoint, options = {}) {
+  const response = await fetch(`${API_URL}${endpoint}`, {
+    ...options,
+    credentials: "include",
+  });
 
   const result = await response.json();
 
@@ -900,6 +903,7 @@ achievementForm.addEventListener("submit", async (event) => {
       headers: {
         "Content-Type": "application/json",
       },
+      credentials: "include",
       body: JSON.stringify(achievement),
     });
 
@@ -958,7 +962,10 @@ document
       try {
         const response = await fetch(
           `${API_URL}/achievements/${deleteButton.dataset.id}`,
-          { method: "DELETE" },
+          {
+            method: "DELETE",
+            credentials: "include",
+          },
         );
 
         const result = await response.json();
