@@ -63,7 +63,7 @@ MV-portfolio/
 │   ├── middleware/
 │   ├── server.js
 │   ├── package.json
-│   └── .env
+│   └── .env.example
 │
 ├── .gitignore
 └── README.md
@@ -191,7 +191,7 @@ MV-portfolio/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Madhan2/MV-Portfolio
+git clone https://github.com/Madhan2/MV-Portfolio.git
 cd MV-Portfolio
 ```
 
@@ -204,13 +204,15 @@ npm install
 
 ### 3. Configure environment variables
 
-Create a `.env` file inside the backend folder.
+Create a `.env` file inside the backend folder using the .env.example file as a reference.
+```cp .env.example .env```
 
-Configure the following variables:
+
+Configure the following variables: (i.e. Update the values in .env with your own config)
 
 ```env
 PORT=5000
-ADMIN_USERNAME=admin
+ADMIN_USERNAME=Admin login username
 ADMIN_PASSWORD_HASH=your_bcrypt_password_hash
 JWT_SECRET=your_secure_random_secret
 FRONTEND_ORIGIN=http://127.0.0.1:5500
@@ -219,27 +221,37 @@ NODE_ENV=development
 
 Never commit your actual `.env` file or authentication secrets.
 
-### 4. Start the backend
+### 4. Start the backend server
 
 ```bash
 npm start
 ```
 
-If no start script exists, use:
+### 5. Open the Application
 
-```bash
-node server.js
-```
+| Application | URL |
+|---|---|
+| Portfolio | http://localhost:5000/ |
+| Admin Dashboard | http://localhost:5000/admin/admin.html |
+| API | http://localhost:5000/api |
+| Health Check | http://localhost:5000/api/health |
 
-### 5. Start the frontend
+> Before starting the server, users need to create their own `backend/.env` using `.env.example` . 
 
-Open the `frontend` folder using Visual Studio Code and launch `index.html` using the Live Server extension.
+### 6. Access the Application (Deployed URLs)
 
-### 6. Access the application
+| Application | URL |
+|---|---|
+| Public Portfolio | https://mv-portfolio-jexj.onrender.com/ |
+| Admin Login | https://mv-portfolio-jexj.onrender.com/admin/login.html |
+| Admin Dashboard | https://mv-portfolio-jexj.onrender.com/admin/admin.html |
+| Backend API | https://mv-portfolio-jexj.onrender.com/api |
+| API Health Check | https://mv-portfolio-jexj.onrender.com/api/health |
 
-- Public portfolio: `http://127.0.0.1:5500/frontend/index.html`
-- Admin login: `http://127.0.0.1:5500/frontend/admin/login.html`
-- Backend API: `http://127.0.0.1:5000/api`
+**Deployment Platform:** Render
+
+**Architecture:** Single Node.js + Express Web Service serving both frontend and backend.
+
 
 ## Security Measures
 
